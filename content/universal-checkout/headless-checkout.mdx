@@ -7,11 +7,11 @@ Enhance your users' journey by tailoring the look-and-feel and the flow of your 
 
 <img src="https://primer.io/docs/static/249176d6abf1958f4168d4318af6833a/d9199/payment_instrument.png" alt="headless-checkout" width="650"/>
 
-### How does the Headless Checkout Work?
+### How does Headless Checkout Work?
 
-Primer's displays your custom UIs for the payment methods you associate to your users via Dashboard, while also helping you manage the entire checkout flow.
+Headless Checkout allows you to use custom UIs for the payment methods you enable to your users, while Primer manages the entire checkout flow.
 
-The flow looks as follows:
+The Headless Checkout flow looks as follows:
 
 1. Initialize Headless Universal Checkout.
 2. Retrieve and display the payment methods available for the users.
@@ -68,14 +68,14 @@ To create a payment manually using the [Payments API](https://apiref.primer.io/r
 2. Set `paymentHandling` to `MANUAL` to turn off automatic payment handling.
 
 3. Set up the following callbacks to handle your payments:
-   - `onTokenizeSuccess()` to create payments using a `paymentMethodToken`.
-   - `onResumeSuccess()` to resume payments using a `resumeToken`.
+      - `onTokenizeSuccess()` to create payments using a `paymentMethodToken`.
+      - `onResumeSuccess()` to resume payments using a `resumeToken`.
 
 4. Retrieve the `paymentMethodtoken` from `onTokenizeSucess()` after users submit their payment data.
 
 5. Create a payment request using `POST /payments` with your `paymentMethodToken` in the payload.
 
-The JSON response of your new payment looks as follows:
+The JSON response that confirms your new payment looks as follows:
 
 ```JSON
 {
